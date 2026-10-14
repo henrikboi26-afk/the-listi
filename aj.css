@@ -3622,3 +3622,163 @@ main::after {
         background-size: 40px 120px;
     }
 }
+
+.gjof .upplysingar {
+    position: relative;
+}
+
+.gjof .upplysingar .stort-numer {
+    position: absolute;
+    top: 42%;
+    right: 20%;
+    transform: translateY(-50%);
+    display: block;
+    width: fit-content;
+    margin: 0;
+    padding: 0 12px 5px;
+    color: #f4a000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(6rem, 13vw, 12rem);
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+    text-shadow: none;
+    text-decoration: none;
+    border: 0;
+    border-bottom: 5px solid #f4a000;
+    pointer-events: none;
+}
+
+@media screen and (max-width: 48rem) {
+    .gjof .upplysingar .stort-numer {
+        position: static;
+        transform: none;
+        align-self: flex-end;
+        font-size: 5rem;
+    }
+}
+
+.gjof .upplysingar .stort-numer {
+    padding: 0 18px 16px;
+    font-family: "Didot", "Bodoni MT", Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.04em;
+    color: #c59636;
+    background: linear-gradient(
+        135deg,
+        #78501b 0%,
+        #bc8a30 22%,
+        #ffe9a3 43%,
+        #c99b42 58%,
+        #896020 78%,
+        #e4c16c 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: 0;
+    text-decoration: none;
+    text-shadow: none;
+    filter: drop-shadow(0 3px 2px #54381325);
+}
+
+.gjof .upplysingar .stort-numer::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    border-radius: 50%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #a87928 15%,
+        #f5d988 50%,
+        #a87928 85%,
+        transparent
+    );
+    box-shadow: 0 3px 8px #9c702825;
+}
+
+@media screen and (max-width: 48rem) {
+    .gjof .upplysingar .stort-numer {
+        position: relative;
+        top: auto;
+        right: auto;
+    }
+}
+.gjof .upplysingar .stort-numer::after {
+    bottom: 35px;
+}
+
+@media screen and (min-width: 48.01rem) {
+    .gjof .upplysingar .stort-numer.numer-throne {
+        top: 48%;
+        right: 8%;
+        font-size: clamp(5rem, 10vw, 9rem);
+    }
+}
+
+@media screen and (min-width: 48.01rem) {
+    .gjof .upplysingar .stort-numer {
+        top: var(--numer-top, 52%);
+        right: var(--numer-right, 5%);
+        font-size: var(--numer-size, clamp(5rem, 10vw, 9rem));
+    }
+
+    .gjof .upplysingar .numer-1 {
+        --numer-top: 44%;
+        --numer-right: 22%;
+        --numer-size: clamp(5rem, 10vw, 9rem);
+    }
+
+    .gjof .upplysingar .numer-2 {
+        --numer-top: 42%;
+        --numer-right: 20%;
+        --numer-size: clamp(5rem, 10vw, 9rem);
+    }
+
+    .gjof .upplysingar .numer-3 {
+        --numer-top: 46%;
+        --numer-right: 22%;
+        --numer-size: clamp(5rem, 10vw, 9rem);
+    }
+
+    .gjof .upplysingar .numer-4 {
+        --numer-top: 46%;
+        --numer-right: 14%;
+        --numer-size: clamp(5rem, 10vw, 9rem);
+    }
+
+    .gjof .upplysingar .numer-5 {
+        --numer-top: 48%;
+        --numer-right: 22%;
+        --numer-size: clamp(5rem, 10vw, 9rem);
+    }
+
+    .gjof .upplysingar .numer-6 {
+        --numer-top: 48%;
+        --numer-right: 18%;
+        --numer-size: clamp(5rem, 10vw, 9rem);
+    }
+
+    .gjof .upplysingar .numer-7 {
+        --numer-top: 46%;
+        --numer-right: 12%;
+        --numer-size: clamp(5rem, 10vw, 9rem);
+    }
+
+    .gjof .upplysingar .numer-8 {
+        --numer-top: 48%;
+        --numer-right: 22%;
+        --numer-size: clamp(5rem, 10vw, 9rem);
+    }
+
+    .gjof .upplysingar .numer-9 {
+        --numer-top: 42%;
+        --numer-right: 18%;
+        --numer-size: clamp(5rem, 10vw, 9rem);
+    }
+
+}

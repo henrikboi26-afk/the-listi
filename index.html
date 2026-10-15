@@ -9,6 +9,10 @@
 </head>
 <body id="efst">
 
+    <div class="lestrar-lina" aria-hidden="true">
+    <div id="gull-framvinda"></div>
+</div>
+
     <header class="haus">
         <p>HENRIK · ÓSKALISTI</p>
         <h1>Afmæli og jól</h1>
@@ -28,13 +32,7 @@
         <a href="#nedst">Neðst á síðu</a>
     </nav>
 
-    <main id="oskalisti">
-        <div class="inngangur">
-            <p>AFMÆLIS- OG JÓLAGJAFIR</p>
-            <h2>Óskalistinn minn</h2>
-        </div>
-
-<details class="oskabref">
+    <details class="oskabref">
     <summary>
         <span class="bref-stimpill">H</span>
 
@@ -65,6 +63,49 @@
         <p class="bref-undirskrift">Henrik</p>
     </div>
 </details>
+
+<div class="jolatre-svaedi">
+
+    <div class="oska-stund">
+    <p>Ýttu á takan</p>
+    <button type="button" id="oska-takki">
+       ✦ taki ✦
+    </button>
+</div>
+
+<div class="deila-lista">
+    <span class="deila-stjarna" aria-hidden="true">✦</span>
+    <h2>Góðar óskir ferðast áfram</h2>
+    <p>Sendu óskalistann til þeirra sem eru að leita að gjafahugmynd.</p>
+
+    <button type="button" id="deila-takki">
+        Deila óskalistanum ↗
+    </button>
+
+    <p id="deila-stada" role="status"></p>
+</div>
+</div>
+
+    <main id="oskalisti">
+        <div class="inngangur">
+            <p>AFMÆLIS- OG JÓLAGJAFIR</p>
+            <h2>Óskalistinn minn</h2>
+        </div>
+
+        <div class="gjafa-leit">
+    <label for="leita-gjof">Finndu ósk á listanum</label>
+
+    <input
+        type="search"
+        id="leita-gjof"
+        placeholder="Skrifaðu nafn gjafar…"
+        autocomplete="off"
+        aria-controls="leitar-nidurstodur"
+    >
+
+    <p id="leitar-stada" role="status"></p>
+    <div id="leitar-nidurstodur"></div>
+</div>
 
 <div class="gjafa-surprise">
     <span>ÁTTU ERFITT MEÐ AÐ VELJA?</span>
@@ -151,7 +192,7 @@
             </li>
 
             <li class="gjof">
-                <img src="gift-7.png" alt="Mynd af gjöf 7" loading="lazy">
+                <img src="gjöf-7.png" alt="Mynd af gjöf 7" loading="lazy">
                 <div class="upplysingar">
                     <span class="stort-numer numer-4">4</span>
                     <h3>7. jaded london jacket</h3>
@@ -241,7 +282,7 @@
             </li>
 
             <li class="gjof">
-                <img src="gift-15.webp" alt="Mynd af gjöf 15" loading="lazy">
+                <img src="gjöf-15.webp" alt="Mynd af gjöf 15" loading="lazy">
                 <div class="upplysingar">
                     <span class="stort-numer numer-5">5</span>
                     <h3>15. Slime Season Statue</h3>
@@ -256,7 +297,7 @@
             </li>
 
             <li class="gjof">
-                <img src="gift-16.jpeg" alt="Mynd af gjöf 16" loading="lazy">
+                <img src="gjöf-16.jpeg" alt="Mynd af gjöf 16" loading="lazy">
                 <div class="upplysingar">
                     <h3>16. PsychCon</h3>
                     <a href="https://www.instagram.com/psychconupdates/">Skoða vöruna →</a>
@@ -563,6 +604,346 @@
     })();
 </script>
 
+<script>
+(() => {
+    const lina = document.querySelector("#gull-framvinda");
+
+    function uppfaeraLinu() {
+        const siduHaed = document.documentElement.scrollHeight;
+        const flettiBil = siduHaed - window.innerHeight;
+        const hlutfall = flettiBil > 0
+            ? Math.min(1, Math.max(0, window.scrollY / flettiBil))
+            : 0;
+
+        lina.style.transform = `scaleX(${hlutfall})`;
+    }
+
+    window.addEventListener("scroll", uppfaeraLinu, { passive: true });
+    window.addEventListener("resize", uppfaeraLinu);
+
+    new ResizeObserver(uppfaeraLinu).observe(document.body);
+
+    uppfaeraLinu();
+})();
+</script>
+
+<script>
+(() => {
+    const minniHreyfing = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    );
+
+    let sidastiNeisti = 0;
+
+    window.addEventListener("pointermove", (event) => {
+        if (
+            event.pointerType !== "mouse" ||
+            minniHreyfing.matches ||
+            performance.now() - sidastiNeisti < 50
+        ) {
+            return;
+        }
+
+        sidastiNeisti = performance.now();
+
+        const neisti = document.createElement("span");
+
+        neisti.className = "gullneisti";
+        neisti.textContent = "✦";
+        neisti.setAttribute("aria-hidden", "true");
+
+        neisti.style.left = `${event.clientX}px`;
+        neisti.style.top = `${event.clientY}px`;
+        neisti.style.setProperty(
+            "--staerd",
+            `${10 + Math.random() * 12}px`
+        );
+
+        document.body.appendChild(neisti);
+
+        setTimeout(() => neisti.remove(), 950);
+    }, { passive: true });
+})();
+</script>
+
+<script>
+(() => {
+    const takki = document.querySelector("#oska-takki");
+    const litir = ["#e8bd63", "#fff0c3", "#ba8735", "#ffffff"];
+    let iGangi = false;
+
+    takki.addEventListener("click", () => {
+        if (iGangi) return;
+
+        iGangi = true;
+        takki.textContent = "Til hamingju Henrik ✦";
+
+        const minniHreyfing = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        if (!minniHreyfing) {
+            for (let i = 0; i < 65; i++) {
+                const konfetti = document.createElement("span");
+
+                konfetti.className = "oska-konfetti";
+                konfetti.setAttribute("aria-hidden", "true");
+
+                konfetti.style.setProperty("--stadur", `${Math.random() * 100}%`);
+                konfetti.style.setProperty("--litur", litir[i % litir.length]);
+                konfetti.style.setProperty("--timi", `${2 + Math.random() * 2}s`);
+                konfetti.style.setProperty("--rek", `${Math.random() * 160 - 80}px`);
+
+                document.body.appendChild(konfetti);
+
+                setTimeout(() => konfetti.remove(), 4100);
+            }
+        }
+
+        setTimeout(() => {
+            takki.textContent = "Takki! ✦";
+            iGangi = false;
+        }, 4200);
+    });
+})();
+</script>
+
+<dialog class="myndagluggi" id="myndagluggi" aria-label="Stækkuð mynd">
+    <button type="button" class="loka-mynd" aria-label="Loka mynd">
+        ✕
+    </button>
+    <img id="staekkuð-mynd" alt="">
+</dialog>
+
+<script>
+(() => {
+    const gluggi = document.querySelector("#myndagluggi");
+    const storMynd = document.querySelector("#staekkuð-mynd");
+    const lokaTakki = gluggi.querySelector(".loka-mynd");
+    let fyrriTakki = null;
+
+    document.querySelectorAll(".gjafalisti > .gjof").forEach((gjof) => {
+        const mynd = gjof.querySelector(":scope > img");
+
+        if (!mynd) return;
+
+        mynd.removeAttribute("tabindex");
+        mynd.removeAttribute("role");
+        mynd.removeAttribute("aria-haspopup");
+
+        let takki = gjof.querySelector(":scope > .skoda-mynd");
+
+        if (!takki) {
+            takki = document.createElement("button");
+            takki.type = "button";
+            takki.className = "skoda-mynd";
+            takki.textContent = "Skoða mynd nánar";
+            mynd.insertAdjacentElement("afterend", takki);
+        }
+
+        takki.setAttribute("aria-haspopup", "dialog");
+        takki.setAttribute("aria-controls", "myndagluggi");
+
+        takki.addEventListener("click", () => {
+            fyrriTakki = takki;
+            storMynd.src = mynd.currentSrc || mynd.src;
+            storMynd.alt = mynd.alt;
+
+            gluggi.showModal();
+            document.documentElement.classList.add("mynd-opin");
+        });
+    });
+
+    lokaTakki.addEventListener("click", () => {
+        gluggi.close();
+    });
+
+    gluggi.addEventListener("click", (event) => {
+        if (event.target !== gluggi) return;
+
+        const rammi = gluggi.getBoundingClientRect();
+
+        const utanVid =
+            event.clientX < rammi.left ||
+            event.clientX > rammi.right ||
+            event.clientY < rammi.top ||
+            event.clientY > rammi.bottom;
+
+        if (utanVid) {
+            gluggi.close();
+        }
+    });
+
+    gluggi.addEventListener("close", () => {
+        document.documentElement.classList.remove("mynd-opin");
+        fyrriTakki?.focus({ preventScroll: true });
+    });
+})();
+</script>
+
+<button
+    type="button"
+    class="skraut-takki"
+    id="skraut-takki"
+    aria-pressed="false"
+>
+    ✦ Slökkva á snjó
+</button>
+
+<script>
+(() => {
+    const takki = document.querySelector("#skraut-takki");
+
+    takki.addEventListener("click", () => {
+        const slokkt = document.body.classList.toggle("skraut-slokkt");
+
+        takki.setAttribute("aria-pressed", String(slokkt));
+
+        takki.textContent = slokkt
+            ? "✦ Kveikja á snjó"
+            : "✦ Slökkva á snjó";
+    });
+})();
+</script>
+
+<script>
+(() => {
+    const leit = document.querySelector("#leita-gjof");
+    const nidurstodur = document.querySelector("#leitar-nidurstodur");
+    const stada = document.querySelector("#leitar-stada");
+
+    const gjafir = Array.from(
+        document.querySelectorAll(".gjafalisti > .gjof")
+    ).filter(gjof => gjof.querySelector("h3"));
+
+    function einfalda(texti) {
+        return texti
+            .toLocaleLowerCase("is")
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .trim();
+    }
+
+    leit.addEventListener("input", () => {
+        const ord = einfalda(leit.value);
+
+        nidurstodur.replaceChildren();
+        stada.textContent = "";
+
+        if (!ord) return;
+
+        const passar = gjafir.filter(gjof =>
+            einfalda(gjof.querySelector("h3").textContent).includes(ord)
+        );
+
+        stada.textContent = passar.length
+            ? `Fjöldi niðurstaðna: ${passar.length}`
+            : "Engin gjöf fannst. Prófaðu annað orð.";
+
+        passar.forEach(gjof => {
+            const takki = document.createElement("button");
+            const titill = gjof.querySelector("h3");
+
+            takki.type = "button";
+            takki.textContent = titill.textContent.trim() + " →";
+
+            takki.addEventListener("click", () => {
+                const toppTakki = document.querySelector("#top-takki");
+
+                if (
+                    gjof.classList.contains("top-falin") &&
+                    toppTakki?.getAttribute("aria-pressed") === "true"
+                ) {
+                    toppTakki.click();
+                }
+
+                document.querySelectorAll(".leit-valin").forEach(spjald => {
+                    spjald.classList.remove("leit-valin");
+                });
+
+                gjof.classList.add("leit-valin");
+                titill.setAttribute("tabindex", "-1");
+                titill.focus({ preventScroll: true });
+
+                gjof.scrollIntoView({
+                    behavior: window.matchMedia(
+                        "(prefers-reduced-motion: reduce)"
+                    ).matches ? "instant" : "smooth",
+                    block: "start"
+                });
+            });
+
+            nidurstodur.appendChild(takki);
+        });
+    });
+})();
+</script>
+
+<script>
+(() => {
+    const takki = document.querySelector("#deila-takki");
+    const stada = document.querySelector("#deila-stada");
+
+    takki.addEventListener("click", async () => {
+        stada.textContent = "";
+
+        if (!["https:", "http:"].includes(location.protocol)) {
+            stada.textContent =
+                "Opnaðu síðuna á GitHub Pages til að deila slóðinni.";
+            return;
+        }
+
+        const slod = new URL(location.href);
+        slod.hash = "";
+
+        try {
+            if (navigator.share) {
+                await navigator.share({
+                    title: "Óskalisti Henriks",
+                    text: "Afmælis- og jólaóskalistinn minn.",
+                    url: slod.href
+                });
+            } else if (navigator.clipboard && window.isSecureContext) {
+                await navigator.clipboard.writeText(slod.href);
+                stada.textContent = "Slóðin er afrituð! Nú geturðu límt hana í skilaboð.";
+            } else {
+                window.prompt("Afritaðu slóðina:", slod.href);
+            }
+        } catch (villa) {
+            if (villa.name !== "AbortError") {
+                window.prompt("Afritaðu slóðina:", slod.href);
+            }
+        }
+    });
+})();
+</script>
+
+<script>
+(() => {
+    const main = document.querySelector("main");
+    const valmynd = document.querySelector(".valmynd");
+
+    if (!main || !valmynd) return;
+
+    function faeraSkraut() {
+        const mainEfst = main.getBoundingClientRect().top;
+        const valmyndNedst = valmynd.getBoundingClientRect().bottom;
+        const bil = Math.min(0, valmyndNedst - mainEfst);
+
+        main.style.setProperty("--skraut-byrjun", `${bil}px`);
+    }
+
+    window.addEventListener("resize", faeraSkraut);
+    window.addEventListener("load", faeraSkraut);
+
+    const observer = new ResizeObserver(faeraSkraut);
+    observer.observe(document.body);
+    observer.observe(main);
+    observer.observe(valmynd);
+
+    faeraSkraut();
+})();
+</script>
 
 </body>
 </html>

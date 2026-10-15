@@ -3709,7 +3709,7 @@ main::after {
     }
 }
 .gjof .upplysingar .stort-numer::after {
-    bottom: 35px;
+    bottom: 25px;
 }
 
 @media screen and (min-width: 48.01rem) {
@@ -4671,4 +4671,668 @@ main::after {
     .gjof:nth-child(14) .upplysingar > a:hover {
         transform: none;
     }
+}
+
+.lestrar-lina {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    z-index: 9999;
+    background: #291c1040;
+    pointer-events: none;
+}
+
+#gull-framvinda {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        #976322,
+        #d7a846,
+        #fff0ba,
+        #d7a846
+    );
+    box-shadow:
+        0 0 10px #e9bc66,
+        0 0 24px #e9bc6670;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+
+.gullneisti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9998;
+    pointer-events: none;
+    color: #ffe4a0;
+    font-size: var(--staerd);
+    line-height: 1;
+    text-shadow:
+        0 0 6px #ffdb81,
+        0 0 14px #dca64d;
+    animation: gullneisti-fellur 900ms ease-out forwards;
+}
+
+@keyframes gullneisti-fellur {
+    from {
+        opacity: 0.9;
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    }
+
+    to {
+        opacity: 0;
+        transform: translate(-50%, 35px) scale(0.2) rotate(100deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gullneisti {
+        display: none;
+        animation: none;
+    }
+}
+
+.oska-stund {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.oska-stund p {
+    color: #d7b779;
+    font-family: Georgia, serif;
+    font-size: 1.4rem;
+    font-style: italic;
+}
+
+#oska-takki {
+    padding: 18px 40px;
+    color: #38240e;
+    background: linear-gradient(135deg, #fff0c3, #d2a04b);
+    border: 1px solid #ffe7a6;
+    border-radius: 50px;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 6px 0 #78501e, 0 12px 28px #d5a44230;
+    transition: transform 180ms ease;
+}
+
+#oska-takki:hover {
+    transform: translateY(-3px);
+}
+
+#oska-takki:active {
+    transform: translateY(3px);
+}
+
+#oska-takki:focus-visible {
+    outline: 3px solid #ffe7a6;
+    outline-offset: 6px;
+}
+
+.oska-konfetti {
+    position: fixed;
+    top: -25px;
+    left: var(--stadur);
+    width: 9px;
+    height: 16px;
+    z-index: 10000;
+    background: var(--litur);
+    border-radius: 2px;
+    pointer-events: none;
+    animation: oska-fall var(--timi) linear forwards;
+}
+
+@keyframes oska-fall {
+    from {
+        transform: translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    to {
+        transform: translate(var(--rek), calc(100vh + 50px)) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #oska-takki {
+        transition: none;
+    }
+
+    #oska-takki:hover,
+    #oska-takki:active {
+        transform: none;
+    }
+
+    .oska-konfetti {
+        display: none;
+    }
+}
+
+.gjof > img {
+    cursor: zoom-in;
+}
+
+.gjof > img:focus-visible {
+    outline: 3px solid #e8bd63;
+    outline-offset: 6px;
+}
+
+.myndagluggi {
+    position: fixed;
+    width: min(900px, 94vw);
+    max-width: 94vw;
+    max-height: 92vh;
+    margin: auto;
+    padding: 45px 16px 16px;
+    background: #211a13;
+    border: 1px solid #cda65e;
+    border-radius: 16px;
+    box-shadow: 0 25px 100px #0008;
+}
+
+.myndagluggi::backdrop {
+    background: #100b08dc;
+    backdrop-filter: blur(8px);
+}
+
+.myndagluggi > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 75vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.loka-mynd {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    color: #ffe4a0;
+    background: transparent;
+    border: 0;
+    border-radius: 50%;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+.loka-mynd:hover {
+    background: #ffe4a01a;
+}
+
+.loka-mynd:focus-visible {
+    outline: 2px solid #ffe4a0;
+}
+
+html.mynd-opin {
+    overflow: hidden;
+}
+
+.gjof > .skoda-mynd {
+    display: block;
+    justify-self: center;
+    align-self: start;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0;
+    padding: 9px 20px;
+    background: linear-gradient(135deg, #f1d589, #ffe7a6);
+    color: #38270e;
+    border: 1px solid #fff0bd;
+    border-radius: 6px;
+    box-shadow: 0 4px 0 #785922;
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: filter 180ms ease;
+}
+
+.gjof:nth-child(even) > .skoda-mynd {
+    background: linear-gradient(135deg, #302719, #211b12);
+    color: #f5d98e;
+    border-color: #b18b3c;
+    box-shadow: 0 4px 0 #120f09;
+}
+
+.gjof > .skoda-mynd:hover {
+    filter: brightness(1.15);
+}
+
+.gjof > .skoda-mynd:focus-visible {
+    outline: 3px solid #d7a846;
+    outline-offset: 5px;
+}
+
+@media screen and (min-width: 48rem) {
+    .gjof:has(> .skoda-mynd) {
+        grid-template-rows: auto 1fr;
+        row-gap: 18px;
+    }
+
+    .gjof:has(> .skoda-mynd) > img {
+        grid-column: 1;
+        grid-row: 1;
+        align-self: start;
+    }
+
+    .gjof > .skoda-mynd {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .gjof:has(> .skoda-mynd) > .upplysingar {
+        grid-column: 2;
+        grid-row: 1 / 3;
+    }
+}
+
+.gjof > img {
+    cursor: default;
+}
+
+.skraut-takki {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 101;
+    max-width: calc(100vw - 110px);
+    padding: 12px 18px;
+    color: #f7dfa1;
+    background: linear-gradient(135deg, #342819, #1e1810);
+    border: 1px solid #b68d42;
+    border-radius: 30px;
+    box-shadow: 0 5px 20px #0004;
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.skraut-takki:hover {
+    background: #49371f;
+}
+
+.skraut-takki:focus-visible {
+    outline: 3px solid #ffe4a0;
+    outline-offset: 4px;
+}
+
+.skraut-takki[aria-pressed="true"] {
+    color: #34240e;
+    background: linear-gradient(135deg, #ffe8ac, #d4ab59);
+}
+
+body.skraut-slokkt .jolasnjor,
+body.skraut-slokkt .gullneisti,
+body.skraut-slokkt .oska-konfetti {
+    display: none;
+}
+
+body.skraut-slokkt .jolasnjor span,
+body.skraut-slokkt .jolaseria span,
+body.skraut-slokkt .gjof > img {
+    animation-play-state: paused;
+}
+
+@media screen and (max-width: 37.5rem) {
+    .skraut-takki {
+        bottom: 14px;
+        left: 12px;
+        padding: 10px 13px;
+        font-size: 0.7rem;
+    }
+}
+
+.gjafa-leit {
+    margin: 25px 0;
+    padding: clamp(20px, 4vw, 35px);
+    background: linear-gradient(135deg, #302519, #19150f);
+    border: 1px solid #b18b48;
+    border-radius: 14px;
+}
+
+.gjafa-leit label {
+    display: block;
+    margin-bottom: 15px;
+    color: #f4db9e;
+    font-family: Georgia, serif;
+    font-size: 1.4rem;
+}
+
+#leita-gjof {
+    width: 100%;
+    padding: 16px 20px;
+    color: #fff3d5;
+    background: #ffffff08;
+    border: 1px solid #a18653;
+    border-radius: 8px;
+    font: inherit;
+}
+
+#leita-gjof::placeholder {
+    color: #c4b493;
+}
+
+#leita-gjof:focus-visible {
+    outline: 2px solid #ffe2a0;
+    outline-offset: 3px;
+}
+
+#leitar-stada {
+    margin: 12px 0;
+    color: #e2c995;
+    font-size: 0.85rem;
+}
+
+#leitar-stada:empty {
+    margin: 0;
+}
+
+#leitar-nidurstodur {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#leitar-nidurstodur button {
+    max-width: 100%;
+    padding: 10px 16px;
+    color: #35250f;
+    background: linear-gradient(135deg, #ffe7a5, #d5ad60);
+    border: 1px solid #ffecc0;
+    border-radius: 7px;
+    font: inherit;
+    font-size: 0.85rem;
+    text-align: left;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+}
+
+#leitar-nidurstodur button:hover {
+    background: #fff0c5;
+}
+
+#leitar-nidurstodur button:focus-visible {
+    outline: 2px solid #ffe2a0;
+    outline-offset: 3px;
+}
+
+.gjof.leit-valin {
+    outline: 3px solid #e7bc65;
+    outline-offset: 5px;
+    scroll-margin-top: 25px;
+}
+
+.deila-lista {
+    margin: 35px 0;
+    padding: clamp(25px, 5vw, 50px);
+    background:
+        radial-gradient(ellipse at top, #e9bd6320, transparent 70%),
+        #241c12;
+    border: 1px solid #b99250;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.deila-stjarna {
+    display: block;
+    margin-bottom: 15px;
+    color: #f6d98c;
+    font-size: 2.5rem;
+    text-shadow: 0 0 20px #e8b75260;
+}
+
+.deila-lista h2 {
+    margin: 0 0 15px;
+    color: #ffe7b0;
+    font-family: Georgia, serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: normal;
+}
+
+.deila-lista p {
+    color: #d8c8a9;
+    line-height: 1.7;
+}
+
+#deila-takki {
+    max-width: 100%;
+    margin-top: 10px;
+    padding: 15px 28px;
+    color: #35240d;
+    background: linear-gradient(135deg, #fff0c4, #d6a84f);
+    border: 1px solid #ffe9af;
+    border-radius: 30px;
+    box-shadow: 0 5px 0 #765421;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#deila-takki:hover {
+    background: #ffe9ac;
+}
+
+#deila-takki:focus-visible {
+    outline: 3px solid #ffe9af;
+    outline-offset: 6px;
+}
+
+#deila-stada {
+    margin: 16px 0 0;
+    font-size: 0.85rem;
+}
+
+#deila-stada:empty {
+    margin: 0;
+}
+
+.deila-lista {
+    width: calc(100% - 24px);
+    max-width: 480px;
+    margin: 20px auto;
+    padding: 18px;
+    border-radius: 10px;
+}
+
+.deila-stjarna {
+    margin-bottom: 6px;
+    font-size: 1.2rem;
+}
+
+.deila-lista h2 {
+    margin: 0 0 8px;
+    font-size: 1.15rem;
+}
+
+.deila-lista p {
+    margin: 0 0 10px;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+#deila-takki {
+    margin-top: 2px;
+    padding: 10px 18px;
+    font-size: 0.8rem;
+}
+
+#deila-stada:not(:empty) {
+    margin: 10px 0 0;
+    font-size: 0.75rem;
+}
+
+main::before,
+main::after {
+    top: var(--skraut-byrjun, 0px);
+}
+
+.oskabref {
+    box-sizing: border-box;
+    width: min(1200px, calc(100% - 32px));
+    margin: 25px auto 35px;
+}
+
+main .oskabref {
+    width: 100%;
+}
+
+.inngangur {
+    position: relative;
+    margin-bottom: 35px;
+    padding: clamp(30px, 5vw, 60px) 24px;
+    border: 2px solid #d4ad60;
+    border-radius: 18px;
+    background:
+        radial-gradient(ellipse at top, #e5bd6620, transparent 70%),
+        #153b2d;
+    box-shadow:
+        0 0 0 5px #173b2d,
+        0 0 0 6px #a77c37,
+        0 15px 35px #0003,
+        inset 0 0 35px #edc8780d;
+}
+
+.inngangur::before {
+    content: "";
+    position: absolute;
+    inset: 9px;
+    border: 1px solid #e8c98055;
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.inngangur::after {
+    content: "✦";
+    position: absolute;
+    bottom: -17px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 16px;
+    color: #ffe3a0;
+    background: #173b2d;
+    font-size: 24px;
+    line-height: 32px;
+    text-shadow: 0 0 12px #edc87860;
+}
+
+.oska-stund,
+.deila-lista {
+    box-sizing: border-box;
+    width: calc(100% - 32px);
+    max-width: 440px;
+    margin: 14px auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #302619, #20190f);
+    border: 1px solid #b99250;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 20px #0002;
+}
+
+.oska-stund p {
+    margin: 0 0 12px;
+    color: #f0d497;
+    font-size: 1.1rem;
+}
+
+.deila-stjarna {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+.deila-lista h2 {
+    margin: 0 0 8px;
+    font-size: 1.15rem;
+    line-height: 1.3;
+}
+
+.deila-lista p {
+    margin: 0 0 12px;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+#oska-takki,
+#deila-takki {
+    margin: 0;
+    padding: 11px 22px;
+    min-height: 44px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    box-shadow: 0 3px 0 #765421;
+}
+
+#deila-stada:empty {
+    display: none;
+}
+
+#deila-stada:not(:empty) {
+    margin: 12px 0 0;
+}
+
+.jolatre-svaedi {
+    position: relative;
+    isolation: isolate;
+    display: flow-root;
+    width: min(1200px, calc(100% - 32px));
+    margin: 25px auto;
+}
+
+.jolatre-svaedi::before,
+.jolatre-svaedi::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: min(280px, calc((100% - 480px) / 2));
+    background-image: url("tree.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    filter: drop-shadow(0 12px 18px #0005);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.jolatre-svaedi::before {
+    left: 0;
+}
+
+.jolatre-svaedi::after {
+    right: 0;
+    transform: scaleX(-1);
+}
+
+.jolatre-svaedi > .oska-stund,
+.jolatre-svaedi > .deila-lista {
+    max-width: 440px;
+    margin: 14px auto;
+}
+
+@media screen and (max-width: 56rem) {
+    .jolatre-svaedi::before,
+    .jolatre-svaedi::after {
+        display: none;
+    }
+}
+
+.jolatre-svaedi::before {
+    transform: scale(1.45);
+    transform-origin: center;
+}
+
+.jolatre-svaedi::after {
+    transform: scaleX(-1) scale(1.45);
+    transform-origin: center;
 }

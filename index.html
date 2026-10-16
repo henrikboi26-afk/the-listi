@@ -1458,7 +1458,7 @@
 
     const brot = document.createDocumentFragment();
 
-    for (let i = 0; i < 1500; i++) {
+    for (let i = 0; i < 1350; i++) {
         const korn = document.createElement("span");
 
         korn.className = "snjobylur-korn";
@@ -1470,7 +1470,7 @@
             `${i % 4 === 0 ? 15 + Math.random() * 20 : 3 + Math.random() * 8}px`
         );
         korn.style.setProperty("--timi", `${2.5 + Math.random() * 3}s`);
-        korn.style.setProperty("--bid", `${-Math.random() * 6}s`);
+        korn.style.setProperty("--bid", `${Math.random() * 3}s`);
         korn.style.setProperty("--rek", `${-100 + Math.random() * 200}px`);
         korn.style.setProperty("--synileiki", `${0.45 + Math.random() * 0.55}`);
 

@@ -5693,3 +5693,506 @@ main > .ytra-skraut {
     outline: 3px solid #6bcbd5;
     outline-offset: 5px;
 }
+
+.gjof:nth-child(23) {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: clamp(22px, 4vw, 50px);
+    color: #e7ebef;
+    background:
+        radial-gradient(
+            ellipse at 80% 0%,
+            #53788950,
+            transparent 55%
+        ),
+        linear-gradient(145deg, #080b10, #1c2832, #090c11);
+    border: 1px solid #63717c;
+    border-top: 5px solid #f0cf45;
+    border-radius: 4px;
+    box-shadow:
+        0 20px 45px #0007,
+        inset 0 0 60px #0005;
+}
+
+.gjof:nth-child(23)::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        115deg,
+        transparent 0 55px,
+        #a6c5d009 55px 57px,
+        transparent 57px 100px
+    );
+    pointer-events: none;
+    z-index: -1;
+}
+
+.gjof:nth-child(23)::after {
+    content: "GOTHAM CITY";
+    position: absolute;
+    right: 20px;
+    bottom: 12px;
+    color: #b8c8d31a;
+    font-size: clamp(1.5rem, 4vw, 3.8rem);
+    font-weight: 900;
+    letter-spacing: 5px;
+    line-height: 1;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.gjof:nth-child(23) > img {
+    padding: 16px;
+    background:
+        radial-gradient(ellipse at center, #344957, #080b10 75%);
+    border: 1px solid #71818e;
+    border-radius: 4px;
+    box-shadow:
+        0 16px 35px #0008,
+        0 0 25px #7298aa20;
+}
+
+.gjof:nth-child(23) h3 {
+    color: #f0cf45;
+    font-size: clamp(1.7rem, 3.3vw, 3rem);
+    font-weight: 900;
+    line-height: 1.15;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 3px 3px 0 #0008;
+}
+
+.gjof:nth-child(23) .verd {
+    align-self: flex-start;
+    width: fit-content;
+    padding: 10px 18px;
+    color: #f0cf45;
+    background: #090d13;
+    border: 1px solid #f0cf4570;
+    border-left: 5px solid #f0cf45;
+    border-radius: 2px;
+    font-weight: bold;
+}
+
+.gjof:nth-child(23) .lysing {
+    padding: 20px;
+    color: #e0e7ec;
+    background: #080c1390;
+    border-left: 3px solid #7f9cac;
+    border-radius: 0 4px 4px 0;
+    line-height: 1.8;
+}
+
+.gjof:nth-child(23) .upplysingar > a {
+    display: inline-block;
+    align-self: flex-start;
+    margin: 15px 0;
+    padding: 12px 22px;
+    color: #101318;
+    background: #f0cf45;
+    border: 2px solid #ffe680;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: 800;
+    box-shadow: 4px 4px 0 #0008;
+}
+
+.gjof:nth-child(23) .upplysingar > a:hover {
+    color: #101318;
+    background: #ffe680;
+    box-shadow: 0 0 20px #f0cf4540;
+}
+
+.gjof:nth-child(23) .upplysingar > a:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 5px;
+}
+
+.gjof:nth-child(23) {
+    margin-top: 30px;
+}
+
+.gjof:nth-child(23) {
+    background:
+        radial-gradient(
+            ellipse at 5% 15%,
+            #e9c63518,
+            transparent 40%
+        ),
+        radial-gradient(
+            ellipse at 100% 25%,
+            #7134a540,
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at 90% 100%,
+            #75bb2920,
+            transparent 40%
+        ),
+        linear-gradient(120deg, #030507, #080a10 50%, #110a18);
+    border: 1px solid #41434b;
+    border-top: 5px solid #e4c33e;
+    border-right: 3px solid #79509e;
+    box-shadow:
+        0 25px 55px #0009,
+        -8px 0 30px #e4c33e0c,
+        8px 0 35px #8541b820,
+        inset 0 0 90px #0009;
+}
+
+.gjof:nth-child(23)::before {
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0 75px,
+            #0006 75px 80px
+        ),
+        repeating-linear-gradient(
+            115deg,
+            transparent 0 60px,
+            #b2bec908 60px 61px,
+            transparent 61px 100px
+        );
+}
+
+.gjof:nth-child(23)::after {
+    content: "ARKHAM";
+    right: 15px;
+    bottom: 8px;
+    color: #a17bb514;
+    font-family: Impact, "Arial Black", sans-serif;
+    font-size: clamp(3rem, 10vw, 8rem);
+    letter-spacing: 8px;
+}
+
+.gjof:nth-child(23) > img {
+    background:
+        radial-gradient(
+            ellipse at 50% 35%,
+            #34414a55,
+            #030507 75%
+        );
+    border: 1px solid #65656a;
+    box-shadow:
+        0 18px 40px #000b,
+        -5px 0 22px #e4c33e12,
+        5px 0 25px #8b45b525;
+}
+
+.gjof:nth-child(23) h3 {
+    color: #f0cf45;
+    font-family: Impact, "Arial Black", sans-serif;
+    font-size: clamp(1.8rem, 3.5vw, 3.2rem);
+    font-weight: 900;
+    letter-spacing: 2px;
+    line-height: 1.12;
+    text-shadow:
+        3px 4px 0 #000,
+        0 0 25px #e4c33e18;
+}
+
+.gjof:nth-child(23) .verd {
+    color: #d7e4bd;
+    background: #080c08;
+    border: 1px solid #74924460;
+    border-left: 5px solid #9ec44e;
+    box-shadow: 0 0 20px #7aa63210;
+}
+
+.gjof:nth-child(23) .lysing {
+    color: #e1dce8;
+    background: linear-gradient(135deg, #08090eef, #170e20ef);
+    border-left: 3px solid #a077bc;
+    box-shadow: inset 0 0 25px #0005;
+}
+
+.gjof:nth-child(23) .upplysingar > a {
+    color: #08090b;
+    background: linear-gradient(135deg, #f5d95a, #c5a42b);
+    border-color: #ffe67a;
+    box-shadow: 4px 4px 0 #000;
+    transition:
+        background 0.25s,
+        color 0.25s,
+        border-color 0.25s,
+        box-shadow 0.25s;
+}
+
+.gjof:nth-child(23) .upplysingar > a:hover {
+    color: #d8f79b;
+    background: #281237;
+    border-color: #a7d55a;
+    box-shadow:
+        4px 4px 0 #08050b,
+        0 0 22px #8a40b545;
+}
+
+.gjof:nth-child(23) > .skoda-mynd {
+    color: #f0cf45;
+    background: #080a0f;
+    border: 1px solid #b69b37;
+    box-shadow: 0 4px 0 #000;
+}
+
+.gjof:nth-child(23) > .skoda-mynd:hover {
+    color: #d8f79b;
+    background: #21102e;
+    border-color: #a7d55a;
+}
+
+.gjof:nth-child(23) {
+    background:
+        radial-gradient(
+            ellipse at 100% 0%,
+            #a0141945,
+            transparent 55%
+        ),
+        radial-gradient(
+            ellipse at 0% 100%,
+            #710a1830,
+            transparent 50%
+        ),
+        linear-gradient(135deg, #030303, #100708 65%, #050505);
+    border: 1px solid #532124;
+    border-top: 5px solid #d32830;
+    border-radius: 3px;
+    box-shadow:
+        0 25px 60px #000a,
+        0 0 35px #a0101818,
+        inset 0 0 100px #0009;
+}
+
+.gjof:nth-child(23)::before {
+    background: repeating-linear-gradient(
+        110deg,
+        transparent 0 45px,
+        #ffffff06 45px 46px,
+        transparent 46px 90px
+    );
+}
+
+.gjof:nth-child(23)::after {
+    content: "GOTHAM";
+    right: 15px;
+    bottom: 5px;
+    color: #c5222914;
+    font-family: Impact, "Arial Black", sans-serif;
+    font-size: clamp(3rem, 10vw, 8rem);
+    letter-spacing: 6px;
+    text-shadow: none;
+}
+
+.gjof:nth-child(23) > img {
+    background:
+        radial-gradient(ellipse at center, #271215, #030303 75%);
+    border: 1px solid #713036;
+    border-radius: 2px;
+    box-shadow:
+        0 20px 40px #000b,
+        0 0 30px #c8202515;
+}
+
+.gjof:nth-child(23) h3 {
+    color: #f04449;
+    font-family: Impact, "Arial Black", sans-serif;
+    font-size: clamp(1.9rem, 3.8vw, 3.5rem);
+    line-height: 1.08;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow:
+        3px 4px 0 #000,
+        0 0 25px #d5192425;
+}
+
+.gjof:nth-child(23) .verd {
+    color: #f0e5e5;
+    background: #090505;
+    border: 1px solid #60272b;
+    border-left: 5px solid #d32830;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.gjof:nth-child(23) .lysing {
+    color: #e4dcdc;
+    background: linear-gradient(135deg, #080808, #190b0d);
+    border-left: 3px solid #c72a32;
+    border-radius: 0;
+    box-shadow: inset 0 0 30px #0005;
+}
+
+.gjof:nth-child(23) .upplysingar > a {
+    color: #ffffff;
+    background: linear-gradient(135deg, #b51c25, #7d1018);
+    border: 1px solid #ee4850;
+    border-radius: 2px;
+    box-shadow: 4px 4px 0 #000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.gjof:nth-child(23) .upplysingar > a:hover {
+    color: #ffffff;
+    background: #c9222d;
+    border-color: #ff7379;
+    box-shadow:
+        4px 4px 0 #000,
+        0 0 25px #ce182b40;
+}
+
+.gjof:nth-child(23) > .skoda-mynd {
+    color: #ff8589;
+    background: #090505;
+    border: 1px solid #b82a33;
+    border-radius: 3px;
+    box-shadow: 0 4px 0 #000;
+}
+
+.gjof:nth-child(23) > .skoda-mynd:hover {
+    color: #ffffff;
+    background: #571019;
+    border-color: #f04449;
+}
+
+.gjof:nth-child(23) a:focus-visible,
+.gjof:nth-child(23) button:focus-visible {
+    outline: 3px solid #ff8589;
+    outline-offset: 5px;
+}
+
+.gjof:nth-child(23) {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    color: #e4e3df;
+    background:
+        linear-gradient(
+            155deg,
+            transparent 47%,
+            #ffffff07 47.2%,
+            #00000055 48%,
+            transparent 49%
+        ),
+        linear-gradient(125deg, #292b29, #111312 48%, #050606);
+    border: 1px solid #4b4d48;
+    border-top: 5px solid #77786e;
+    border-radius: 4px;
+    box-shadow:
+        inset 0 2px 0 #ffffff15,
+        inset 0 -25px 60px #00000070,
+        0 20px 45px #00000080;
+}
+
+.gjof:nth-child(23)::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        repeating-linear-gradient(
+            115deg,
+            transparent 0 45px,
+            #ffffff04 46px,
+            transparent 47px 95px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            #ffffff02 0 1px,
+            transparent 1px 4px
+        );
+}
+
+.gjof:nth-child(23)::after {
+    content: "GOTHAM";
+    position: absolute;
+    right: 15px;
+    bottom: 5px;
+    z-index: -1;
+    color: #ffffff06;
+    font-family: Impact, "Arial Black", sans-serif;
+    font-size: clamp(3rem, 10vw, 8rem);
+    letter-spacing: 6px;
+    pointer-events: none;
+}
+
+.gjof:nth-child(23) > img {
+    padding: 16px;
+    background:
+        radial-gradient(ellipse at top, #454640, #181a18 55%, #080909);
+    border: 1px solid #62635a;
+    border-radius: 3px;
+    box-shadow:
+        inset 0 1px 0 #ffffff20,
+        8px 8px 0 #080909,
+        0 18px 30px #00000080;
+}
+
+.gjof:nth-child(23) h3 {
+    color: #d8d7ce;
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    font-family: Impact, "Arial Black", sans-serif;
+    font-size: clamp(1.9rem, 3.8vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow:
+        0 1px 0 #ffffff30,
+        3px 4px 0 #000000;
+}
+
+.gjof:nth-child(23) .verd {
+    color: #e6e3d5;
+    background: linear-gradient(135deg, #30322e, #151715);
+    border: 1px solid #65665b;
+    border-left: 5px solid #a29c85;
+    border-radius: 2px;
+    box-shadow: 4px 4px 0 #080909;
+}
+
+.gjof:nth-child(23) .lysing {
+    color: #d1d2cc;
+    background: linear-gradient(135deg, #212320, #111310);
+    border: 1px solid #383b34;
+    border-left: 3px solid #898b7c;
+    border-radius: 2px;
+    line-height: 1.8;
+    box-shadow: inset 0 1px 0 #ffffff06;
+}
+
+.gjof:nth-child(23) .upplysingar > a,
+.gjof:nth-child(23) > .skoda-mynd {
+    color: #eeede6;
+    background: linear-gradient(160deg, #41443e, #20231f 55%, #121410);
+    border: 1px solid #777a6b;
+    border-radius: 2px;
+    text-shadow: 0 2px 2px #000000;
+    box-shadow:
+        inset 0 1px 0 #ffffff20,
+        0 5px 0 #050605,
+        0 10px 18px #00000060;
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.gjof:nth-child(23) .upplysingar > a:hover,
+.gjof:nth-child(23) > .skoda-mynd:hover {
+    color: #ffffff;
+    background: linear-gradient(160deg, #575a50, #30332c 55%, #171a14);
+    border-color: #b5b5a5;
+    box-shadow:
+        inset 0 1px 0 #ffffff35,
+        0 5px 0 #050605,
+        0 12px 24px #00000080;
+}
+
+.gjof:nth-child(23) a:focus-visible,
+.gjof:nth-child(23) button:focus-visible {
+    outline: 3px solid #d8d7ce;
+    outline-offset: 5px;
+}

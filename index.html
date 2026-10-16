@@ -86,7 +86,39 @@
 </div>
 </div>
 
-    <main id="oskalisti">
+    
+
+<section class="jola-klukka" aria-label="Niðurtalning að jólum">
+    <p class="klukka-titill">✦ AFMÆLIÐ NÁLGAST ✦</p>
+
+    <div class="klukka-tolur">
+        <div>
+            <strong id="jola-dagar">–</strong>
+            <span>DAGAR</span>
+        </div>
+
+        <span class="klukka-skil" aria-hidden="true">:</span>
+
+        <div>
+            <strong id="jola-timar">–</strong>
+            <span>KLST.</span>
+        </div>
+
+        <span class="klukka-skil" aria-hidden="true">:</span>
+
+        <div>
+            <strong id="jola-minutur">–</strong>
+            <span>MÍN.</span>
+        </div>
+    </div>
+
+    <p class="klukka-dagsetning">26. nóvember</p>
+</section>
+
+<main id="oskalisti">
+
+    <div class="ytra-skraut" aria-hidden="true"></div>
+
         <div class="inngangur">
             <p>AFMÆLIS- OG JÓLAGJAFIR</p>
             <h2>Óskalistinn minn</h2>
@@ -106,6 +138,7 @@
     <p id="leitar-stada" role="status"></p>
     <div id="leitar-nidurstodur"></div>
 </div>
+
 
 <div class="gjafa-surprise">
     <span>ÁTTU ERFITT MEÐ AÐ VELJA?</span>
@@ -192,7 +225,7 @@
             </li>
 
             <li class="gjof">
-                <img src="gift-7.png" alt="Mynd af gjöf 7" loading="lazy">
+                <img src="gjöf-7.png" alt="Mynd af gjöf 7" loading="lazy">
                 <div class="upplysingar">
                     <span class="stort-numer numer-4">4</span>
                     <h3>7. jaded london jacket</h3>
@@ -282,7 +315,7 @@
             </li>
 
             <li class="gjof">
-                <img src="gift-15.webp" alt="Mynd af gjöf 15" loading="lazy">
+                <img src="gjöf-15.webp" alt="Mynd af gjöf 15" loading="lazy">
                 <div class="upplysingar">
                     <span class="stort-numer numer-5">5</span>
                     <h3>15. Slime Season Statue</h3>
@@ -297,7 +330,7 @@
             </li>
 
             <li class="gjof">
-                <img src="gift-16.jpeg" alt="Mynd af gjöf 16" loading="lazy">
+                <img src="gjöf-16.jpeg" alt="Mynd af gjöf 16" loading="lazy">
                 <div class="upplysingar">
                     <h3>16. PsychCon</h3>
                     <a href="https://www.instagram.com/psychconupdates/">Skoða vöruna →</a>
@@ -383,13 +416,18 @@
             </li>
 
             <li class="gjof">
-                <img src="myndir/gjof-22.jpg" alt="Mynd af gjöf 22" loading="lazy">
+                <img src="gift-22.jpg" alt="Mynd af gjöf 22" loading="lazy">
                 <div class="upplysingar">
-                    <h3>22. Nafn á gjöf</h3>
-                    <a href="#">Skoða vöruna →</a>
-                    <p class="verd">Verð: — kr.</p>
-                    <p class="lysing">Hér kemur lýsing á gjöfinni, stærð, litur eða aðrar upplýsingar.</p>
-                </div>
+                    <h3>22. Scooby Doo Lego</h3>
+                    <a href="https://www.ebay.com/itm/314075835588">Skoða vöruna →</a>
+                    <p class="verd">Verð: $74.50.</p>
+ <p class="lysing">
+            LEGO Scooby-Doo Haunted Lighthouse (75903).
+            Draugalegur viti með helli, báti og persónum úr
+            Scooby-Doo. Mig langar að byggja settið og hafa það
+            til sýnis í herberginu mínu — smá ráðgáta og
+            Scooby-Doo stemning í hilluna.
+        </p>                </div>
             </li>
 
             <li class="gjof">
@@ -944,6 +982,59 @@
     faeraSkraut();
 })();
 </script>
+
+<script>
+(() => {
+    const dagar = document.getElementById("jola-dagar");
+    const timar = document.getElementById("jola-timar");
+    const minutur = document.getElementById("jola-minutur");
+    const titill = document.querySelector(".klukka-titill");
+
+    function uppfaeraAfmaeli() {
+        const nuna = new Date();
+        const ar = nuna.getUTCFullYear();
+
+        let afmaeli = Date.UTC(ar, 10, 26);
+        const dagurinnEftir = Date.UTC(ar, 10, 27);
+
+        if (
+            nuna.getTime() >= afmaeli &&
+            nuna.getTime() < dagurinnEftir
+        ) {
+            titill.textContent = "✦ TIL HAMINGJU MEÐ AFMÆLIÐ, HENRIK! ✦";
+            dagar.textContent = "00";
+            timar.textContent = "00";
+            minutur.textContent = "00";
+            return;
+        }
+
+        if (nuna.getTime() >= dagurinnEftir) {
+            afmaeli = Date.UTC(ar + 1, 10, 26);
+        }
+
+        const eftir = afmaeli - nuna.getTime();
+
+        titill.textContent = "✦ AFMÆLIÐ NÁLGAST ✦";
+
+        dagar.textContent = String(
+            Math.floor(eftir / 86400000)
+        ).padStart(2, "0");
+
+        timar.textContent = String(
+            Math.floor(eftir / 3600000) % 24
+        ).padStart(2, "0");
+
+        minutur.textContent = String(
+            Math.floor(eftir / 60000) % 60
+        ).padStart(2, "0");
+    }
+
+    uppfaeraAfmaeli();
+    setInterval(uppfaeraAfmaeli, 1000);
+})();
+</script>
+
+
 
 </body>
 </html>

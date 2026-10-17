@@ -13,10 +13,17 @@
     <div id="gull-framvinda"></div>
 </div>
 
+
+
     <header class="haus">
         <p>HENRIK · ÓSKALISTI</p>
         <h1>Afmæli og jól</h1>
         <p>Afmæli og Jól listin minn.</p>
+        <div class="hangandi-jolakula" aria-hidden="true">
+    <span class="kulu-band"></span>
+    <span class="kulu-hald"></span>
+    <span class="kulu-bolti">✦</span>
+</div>
     </header>
 
 <div class="jolaseria" aria-hidden="true">
@@ -166,14 +173,33 @@
     <p class="klukka-dagsetning">26. nóvember</p>
 </section>
 
-<main id="oskalisti">
+<main>
+
+ <div class="jolakerti">
+    <button
+        class="kerta-takki"
+        id="kveikja-kerti"
+        type="button"
+        aria-pressed="false"
+        aria-label="Kveikja á jólakerti"
+    >
+        <span class="kerta-logi" aria-hidden="true"></span>
+        <span class="kerta-kveikur" aria-hidden="true"></span>
+        <span class="kerta-vax" aria-hidden="true"></span>
+        <span class="kerta-diskur" aria-hidden="true"></span>
+    </button>
+
+    <p id="kerta-texti">Kveiktu á kerti.</p>
+</div>
 
     <div class="ytra-skraut" aria-hidden="true"></div>
 
         <div class="inngangur">
             <p>AFMÆLIS- OG JÓLAGJAFIR</p>
-            <h2>Óskalistinn minn</h2>
+            <h2 id="oskalisti">Óskalistinn minn</h2>
         </div>
+
+       
 
         <div class="gjafa-leit">
     <label for="leita-gjof">Finndu ósk á listanum</label>
@@ -236,7 +262,6 @@
             <li class="gjof">
                 <img src="gjöf-3.webp" alt="Mynd af gjöf 3" loading="lazy">
                 <div class="upplysingar">
-                    <span class="stort-numer numer-throne">10</span>
                     <h3>3. Watch The Throne Vinyl</h3>
                     <a href="https://www.discogs.com/sell/release/3351778">Skoða vöruna →</a>
                     <p class="verd">Verð:  21,456kr.</p>
@@ -278,7 +303,7 @@
             </li>
 
             <li class="gjof">
-                <img src="gift-7.png" alt="Mynd af gjöf 7" loading="lazy">
+                <img src="gjöf-7.png" alt="Mynd af gjöf 7" loading="lazy">
                 <div class="upplysingar">
                     <span class="stort-numer numer-4">4</span>
                     <h3>7. jaded london jacket</h3>
@@ -368,7 +393,7 @@
             </li>
 
             <li class="gjof">
-                <img src="gift-15.webp" alt="Mynd af gjöf 15" loading="lazy">
+                <img src="gjöf-15.webp" alt="Mynd af gjöf 15" loading="lazy">
                 <div class="upplysingar">
                     <span class="stort-numer numer-5">5</span>
                     <h3>15. Slime Season Statue</h3>
@@ -383,7 +408,7 @@
             </li>
 
             <li class="gjof">
-                <img src="gift-16.jpeg" alt="Mynd af gjöf 16" loading="lazy">
+                <img src="gjöf-16.jpeg" alt="Mynd af gjöf 16" loading="lazy">
                 <div class="upplysingar">
                     <h3>16. PsychCon</h3>
                     <a href="https://www.instagram.com/psychconupdates/">Skoða vöruna →</a>
@@ -414,7 +439,7 @@
             <li class="gjof">
                 <img src="gjöf-18.png" alt="Mynd af gjöf 18" loading="lazy">
                 <div class="upplysingar">
-                    <span class="stort-numer numer-9">9</span>
+                    <span class="stort-numer numer-9">10</span>
                     <h3>18. room stuff</h3>
                     <a href="https://www.amazon.co.uk/">Skoða vöruna →</a>
                     <p class="verd">Verð: ? kr.</p>
@@ -486,6 +511,7 @@
             <li class="gjof">
                 <img src="gift-23.webp" alt="Mynd af gjöf 23" loading="lazy">
                 <div class="upplysingar">
+                    <span class="stort-numer numer-throne">9</span>
                     <h3>23. Lego Batman-Arkham Ashylum</h3>
                     <a href="https://www.coolshop.is/vara/lego-super-heroes-arkham-asylum-76300/23SZ9F/">Skoða vöruna →</a>
                     <p class="verd">Verð: 60.000 kr.</p>
@@ -1492,6 +1518,31 @@
 });
 })();
 </script>
+
+<script>
+(() => {
+    const takki = document.getElementById("kveikja-kerti");
+    const texti = document.getElementById("kerta-texti");
+
+    if (!takki || !texti) return;
+
+    takki.addEventListener("click", () => {
+        const logar = takki.getAttribute("aria-pressed") !== "true";
+
+        takki.setAttribute("aria-pressed", String(logar));
+        takki.setAttribute(
+            "aria-label",
+            logar ? "Slökkva á jólakerti" : "Kveikja á jólakerti"
+        );
+
+        texti.textContent = logar
+            ? "kerti."
+            : "Kveiktu á kerti.";
+    });
+})();
+</script>
+
+
 
 </body>
 </html>

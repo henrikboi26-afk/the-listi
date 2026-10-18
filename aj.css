@@ -7107,6 +7107,8 @@ main > .ytra-skraut {
     max-width: 100%;
     min-width: 0;
     height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     align-self: start;
     padding: 0;
     background: #050509;
@@ -7211,47 +7213,4 @@ main > .ytra-skraut {
 .gjof:nth-child(24) button:focus-visible {
     outline: 3px solid #d8b6ff;
     outline-offset: 5px;
-}
-
-/* Gjöf 24: myndband og upplýsingar í aðskildum dálkum */
-.gjafalisti > .gjof:nth-child(24) {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    align-items: start;
-    gap: 24px;
-}
-.gjafalisti > .gjof:nth-child(24) > .gjafa-video {
-    position: static;
-    grid-column: 1;
-    grid-row: 1;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    align-self: start;
-}
-.gjafalisti > .gjof:nth-child(24) > .upplysingar {
-    position: relative;
-    grid-column: 1;
-    grid-row: 2;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 18px;
-}
-.gjafalisti > .gjof:nth-child(24) > .upplysingar > * {
-    position: static;
-    max-width: 100%;
-}
-@media screen and (min-width: 48rem) {
-    .gjafalisti > .gjof:nth-child(24) {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
-    }
-    .gjafalisti > .gjof:nth-child(24) > .upplysingar {
-        grid-column: 2;
-        grid-row: 1;
-    }
 }

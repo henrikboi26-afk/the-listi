@@ -7193,22 +7193,170 @@ main > .ytra-skraut {
         5px 0 20px #488bff35;
 }
 
-.gjof:nth-child(24) .oska-stjarna,
-.gjof:nth-child(24) .deila-gjof {
-    color: #e4d3ff;
-    background: #191424;
-    border-color: #796191;
-}
-
-.gjof:nth-child(24) .oska-stjarna[aria-pressed="true"] {
-    color: #21112e;
-    background: linear-gradient(120deg, #ffc5e2, #d5b7ff, #b8dcff);
-    border-color: #ead7ff;
-    box-shadow: 0 0 18px #b879ff30;
-}
-
 .gjof:nth-child(24) a:focus-visible,
 .gjof:nth-child(24) button:focus-visible {
     outline: 3px solid #d8b6ff;
     outline-offset: 5px;
+}
+
+.gjof:nth-child(25) {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: clamp(24px, 4vw, 50px);
+    color: #eee8de;
+    background:
+        radial-gradient(
+            ellipse at 10% 0%,
+            #b9aa8b20,
+            transparent 55%
+        ),
+        linear-gradient(
+            135deg,
+            #343330,
+            #171817 55%,
+            #252522
+        );
+    border: 1px solid #77766d;
+    border-radius: 22px;
+    box-shadow:
+        0 18px 45px #00000035,
+        inset 0 0 35px #00000025;
+}
+
+.gjof:nth-child(25)::before {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    border: 2px dashed #c7bfaa75;
+    border-radius: 14px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.gjof:nth-child(25)::after {
+    content: "";
+    position: absolute;
+    right: -60px;
+    bottom: -60px;
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(
+        circle,
+        #d7c5a51a,
+        transparent 70%
+    );
+    pointer-events: none;
+    z-index: -1;
+}
+
+.gjof:nth-child(25) > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    align-self: center;
+    padding: clamp(12px, 2vw, 28px);
+    object-fit: contain;
+    background: linear-gradient(
+        145deg,
+        #e6dfd2,
+        #b9b3a6
+    );
+    border: 1px solid #f6f0e080;
+    border-radius: 14px;
+    box-shadow:
+        0 15px 30px #00000040,
+        inset 0 0 20px #ffffff25;
+    transition: transform 300ms ease;
+}
+
+.gjof:nth-child(25) .upplysingar {
+    min-width: 0;
+    gap: 24px;
+}
+
+.gjof:nth-child(25) h3 {
+    margin: 0;
+    color: #f2ece1;
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.9rem, 3.5vw, 3.4rem);
+    line-height: 1.15;
+    letter-spacing: 1px;
+    text-shadow: 0 3px 12px #00000045;
+}
+
+.gjof:nth-child(25) .verd {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0;
+    padding: 12px 22px;
+    color: #282722;
+    background: linear-gradient(
+        120deg,
+        #f0e8d8,
+        #c1b59d
+    );
+    border: 1px solid #eee6d3;
+    border-radius: 6px;
+    box-shadow: 4px 4px 0 #00000030;
+    font-weight: bold;
+}
+
+.gjof:nth-child(25) .lysing {
+    margin: 0;
+    padding: 22px;
+    color: #e0dbd0;
+    background: #ffffff06;
+    border: 1px solid #bdb5a52e;
+    border-left: 4px solid #c9bfa9;
+    border-radius: 8px;
+    line-height: 1.85;
+}
+
+.gjof:nth-child(25) .upplysingar > a,
+.gjof:nth-child(25) .skoda-mynd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 12px 22px;
+    color: #ede6d8;
+    background: linear-gradient(
+        135deg,
+        #45443e,
+        #22231f
+    );
+    border: 1px solid #a49b87;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition:
+        background 200ms ease,
+        box-shadow 200ms ease;
+}
+
+.gjof:nth-child(25) .upplysingar > a:hover,
+.gjof:nth-child(25) .skoda-mynd:hover {
+    color: #fff5df;
+    background: #555044;
+    box-shadow: 0 0 18px #dac8a525;
+}
+
+
+
+.gjof:nth-child(25) :focus-visible {
+    outline: 3px solid #ead9b5;
+    outline-offset: 5px;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .gjof:nth-child(25) > img:hover {
+        transform: translateY(-5px) rotate(-2deg);
+    }
+}
+
+.gjof:nth-child(25){
+    margin-top: 35px;
 }

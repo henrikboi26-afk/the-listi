@@ -3765,7 +3765,7 @@ main::after {
 
     .gjof .upplysingar .numer-7 {
         --numer-top: 38%;
-        --numer-right: 10%;
+        --numer-right: 22%;
         --numer-size: clamp(5rem, 10vw, 9rem);
     }
 
